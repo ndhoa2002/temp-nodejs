@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coding</title>
+  <style>
+    /* CSS để căn giữa dòng chữ */
+    html, body {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* CSS cho ô vuông và viền */
+    .square {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div id="coding">
+    <div class="square"><span>C</span></div>
+    <div class="square"><span>o</span></div>
+    <div class="square"><span>d</span></div>
+    <div class="square"><span>i</span></div>
+    <div class="square"><span>n</span></div>
+    <div class="square"><span>g</span></div>
+  </div>
+
+  <script>
+    // JavaScript để thêm hiệu ứng màu ngẫu nhiên khi di chuột vào từng ô chữ cái
+    const squares = document.querySelectorAll('#coding .square');
+
+    squares.forEach(square => {
+      square.addEventListener('mouseover', () => {
+        square.style.backgroundColor = getRandomColor();
+        square.style.color = getRandomColor();
+      });
+
+      square.addEventListener('mouseout', () => {
+        square.style.backgroundColor = '';
+        square.style.color = '';
+      });
+    });
+
+    // Hàm để tạo màu ngẫu nhiên
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+</body>
+</html>
