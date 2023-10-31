@@ -5,6 +5,11 @@ const server = http.createServer((req, res)=>{
         return;
     }
     if(req.url === '/about'){
+        for(let i=0; i<100; i++){
+            for(let j=0; j<100; j++){
+                console.log(`${i} ${j}`)
+            }
+        }
         res.end('Here is our short history')
         return;
     }
